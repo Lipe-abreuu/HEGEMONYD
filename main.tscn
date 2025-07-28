@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvebeupnoiyal"]
+
+[ext_resource type="Script" path="res://game/src/game/GameStateMachine.gd" id="1_b5u2k"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameStateMachine" type="Node" parent="."]
+script = ExtResource("1_b5u2k")
+
+[node name="UILayer" type="CanvasLayer" parent="GameStateMachine"]

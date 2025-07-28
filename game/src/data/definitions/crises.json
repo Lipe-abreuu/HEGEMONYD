@@ -1,0 +1,46 @@
+{
+	"crises": {
+		"truck_strike": {
+			"id": "truck_strike",
+			"name": "Paro de Camioneros",
+			"description": "Los transportistas paralizan el país exigiendo garantías",
+			"trigger_conditions": {
+				"any": [
+					{"reform_completed": "nationalize_transport"},
+					{"economic_indicator": "inflation", "operator": ">", "value": 0.5},
+					{"date_after": "1972-10-01"}
+				]
+			},
+			"timer_seconds": 45,
+			"severity": "high",
+			"options": [
+				{
+					"id": "negotiate",
+					"name": "Negociar",
+					"icon": "handshake",
+					"cost": { "treasury": 100000000 },
+					"success_chance": 0.7
+				},
+				{
+					"id": "mobilize_japs",
+					"name": "Mobilizar JAPs",
+					"icon": "people",
+					"cost": { "political_capital": 40 },
+					"success_chance": 0.6
+				},
+				{
+					"id": "military_intervention",
+					"name": "Intervención Militar",
+					"icon": "military",
+					"cost": { "military_loyalty": -0.2 },
+					"success_chance": 0.9
+				}
+			],
+			"timeout_effects": {
+				"shortage_level": 3,
+				"popular_support": -0.2,
+				"economic_damage": 50000000
+			}
+		}
+	}
+}

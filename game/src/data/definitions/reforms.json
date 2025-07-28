@@ -1,0 +1,43 @@
+{
+	"reforms": {
+		"nationalize_copper": {
+			"id": "nationalize_copper",
+			"name": "Nacionalizar el Cobre",
+			"description": "Expropiar las minas de cobre en manos extranjeras",
+			"region_requirement": "north",
+			"cost": {
+				"political_capital": 50,
+				"treasury": 0
+			},
+			"requirements": {
+				"government_seats": 70,
+				"popular_support": 0.6
+			},
+			"effects": {
+				"immediate": {
+					"ownership_change": {
+						"sector": "mining",
+						"region": "north",
+						"from": "private",
+						"to": "state",
+						"amount": 0.7
+					}
+				}
+			}
+		},
+		"agrarian_reform": {
+			"id": "agrarian_reform",
+			"name": "Reforma Agraria",
+			"description": "Redistribuir tierras de latifundios a campesinos",
+			"region_requirement": "south",
+			"cost": {
+				"political_capital": 40,
+				"treasury": 30000000
+			},
+			"requirements": {
+				"government_seats": 65,
+				"popular_support": 0.55
+			}
+		}
+	}
+}
