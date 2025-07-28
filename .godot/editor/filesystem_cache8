@@ -1,36 +1,65 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1753665780
-GameScreen.tscn::PackedScene::148549088955420587::1753665779::0::1::::<><>::uid://clms4iwawhulv::::res://game/mapa.png
+::res://::1753676038
+GameScreen.tscn::PackedScene::148549088955420587::1753676038::0::1::::<><>::res://game/src/ui/screens/GameScreen.gd<>uid://clms4iwawhulv::::res://game/mapa.png<>uid://bpmqtexu0uk4m::::res://game/HighPannel.svg<>uid://bvoxyw3omivfy::::res://game/Menu Botton.svg<>uid://1occrf37ylt6::::res://game/Pause Btton.svg<>uid://suu5qdh7p8ps::::res://game/Play Botton.svg<>uid://buam4yx8tep1y::::res://game/Rev Con.svg<>uid://bjohw8qbw6pyk::::res://game/allend.png<>uid://bsy0vvl3w53xv::::res://game/Notification.svg<>uid://bbsib5x4ucroc::::res://game/min continare.png<>uid://uroucdt6fug::::res://game/Consultar Botton.svg<>uid://cqy0gbvctwv5h::::res://game/Min2.svg<>uid://bnam1nuobfsxk::::res://game/min3.svg<>uid://b3synsb3sa8kf::::res://game/Min4.svg<>uid://bt38stgotw4vu::::res://game/North.svg<>uid://drocuyf56v57c::::res://game/Sul.svg
 icon.svg::CompressedTexture2D::8445247314857833410::1753591801::1753591810::1::::<><>::
-Mainmenu.tscn::PackedScene::3659496098611872335::1753665780::0::1::::<><>::res://game/src/ui/screens/MainMenuScreen.gd<>uid://cv1l65jefcldp::::res://game/Dashboard.png<>uid://dsadnbd8mupok::::res://game/Subtitle.png<>uid://bvc1j4mym5jow::::res://game/New.png<>uid://bvso7psl35r41::::res://game/Carreg.png<>uid://caxi4h7x7n1nd::::res://game/opc.png<>uid://dhujttjh5125u::::res://game/sair.png
+main.tscn::PackedScene::8641554212911388907::1753676038::0::1::::<><>::res://game/src/game/GameStateMachine.gd
+Mainmenu.tscn::PackedScene::3659496098611872335::1753676038::0::1::::<><>::res://game/src/ui/screens/MainMenuScreen.gd<>uid://cv1l65jefcldp::::res://game/Dashboard.png<>uid://dsadnbd8mupok::::res://game/Subtitle.png<>uid://bvc1j4mym5jow::::res://game/New.png<>uid://bvso7psl35r41::::res://game/Carreg.png<>uid://caxi4h7x7n1nd::::res://game/opc.png<>uid://dhujttjh5125u::::res://game/sair.png
 node_2d.tscn::PackedScene::7827834235332081735::1753597180::0::1::::<><>::
-main.tscn::PackedScene::8641554212911388907::1753665780::0::1::::<><>::res://game/src/game/GameStateMachine.gd
-::res://game/::1753640116
+::res://game/::1753675497
+allend.png::CompressedTexture2D::3047487629470999150::1753671676::1753671684::1::::<><>::
+Allend.svg::CompressedTexture2D::4474121582067613193::1753671650::1753671617::1::::<><>::
 Carreg.png::CompressedTexture2D::3898453199163682760::1753601582::1753601614::1::::<><>::
+Com.png::CompressedTexture2D::4621022463257501458::1753668428::1753668429::1::::<><>::
+Comp.svg::CompressedTexture2D::8441132514889225005::1753672458::1753672471::1::::<><>::
+Component 3.png::CompressedTexture2D::4395579977680924081::1753674288::1753674301::1::::<><>::
+Consultar Botton.svg::CompressedTexture2D::42345798792427210::1753672379::1753672471::1::::<><>::
 Dashboard.png::CompressedTexture2D::6301205741714178113::1753640109::1753640116::1::::<><>::
 Dashboardbaba.png::CompressedTexture2D::1369496649941955952::1753639996::1753640003::1::::<><>::
-mapa.png::CompressedTexture2D::5570836328548510323::1753600612::1753600618::1::::<><>::
+Date Botton.svg::CompressedTexture2D::5766987704080459318::1753671347::1753671367::1::::<><>::
+HighPannel.svg::CompressedTexture2D::3465031519847578238::0::0::1::::<><>::
+his.png::CompressedTexture2D::8582057645706144407::1753668345::1753668359::1::::<><>::
+mapa.png::CompressedTexture2D::5570836328548510323::1753675486::1753675497::1::::<><>::
+Menu Botton.svg::CompressedTexture2D::3890728237956661846::1753671340::1753671367::1::::<><>::
+Midle.svg::CompressedTexture2D::3272787691891861811::1753674827::1753674843::1::::<><>::
+Min2.svg::CompressedTexture2D::5946936656356139959::1753673399::1753673298::1::::<><>::
+min3.svg::CompressedTexture2D::3299651399879537496::1753673536::1753673541::1::::<><>::
+Min4.svg::CompressedTexture2D::4390348476539633981::1753673748::1753673751::1::::<><>::
+Min 3.svg::CompressedTexture2D::6930848501980490576::1753673220::1753673225::1::::<><>::
+min continare.png::CompressedTexture2D::2494257461215704658::1753672430::1753672471::1::::<><>::
 New.png::CompressedTexture2D::3866111412379456198::1753601572::1753601614::1::::<><>::
+Norte.svg::CompressedTexture2D::78975054093456921::1753674811::1753674843::1::::<><>::
+North.svg::CompressedTexture2D::3779848102855836018::1753674833::1753674843::1::::<><>::
+Notification.svg::CompressedTexture2D::3700921483052288163::1753671054::1753671055::1::::<><>::
 opc.png::CompressedTexture2D::4820859997880461933::1753601591::1753601614::1::::<><>::
+Pause Btton.svg::CompressedTexture2D::1853937130655907409::1753671354::1753671367::1::::<><>::
+plan icon.svg::CompressedTexture2D::15017894350246558::1753672087::1753672089::1::::<><>::
+Play Botton.svg::CompressedTexture2D::1305955499607709100::1753671359::1753671367::1::::<><>::
+ref.png::CompressedTexture2D::2611482346984255836::1753668023::1753668027::1::::<><>::
+reff.png::CompressedTexture2D::6006731836293377004::1753668070::1753668080::1::::<><>::
+Reformista.svg::CompressedTexture2D::1390567819374579784::1753667866::1753667868::1::::<><>::
+Rev Con.svg::CompressedTexture2D::3790979246006028152::1753670459::1753670461::1::::<><>::
+revv.png::CompressedTexture2D::5906851144403239469::1753668357::1753668359::1::::<><>::
 sair.png::CompressedTexture2D::7692452906851901260::1753601600::1753601614::1::::<><>::
 Subtitle.png::CompressedTexture2D::8422866661536921442::1753601560::1753601614::1::::<><>::
+Sul.svg::CompressedTexture2D::8381532101036097234::1753674842::1753674843::1::::<><>::
+Vector 158.svg::CompressedTexture2D::3152981572673269879::1753674816::1753674843::1::::<><>::
+Voltar.svg::CompressedTexture2D::6391150604385359414::1753668602::1753668604::1::::<><>::
 ::res://game/assets/::1753665896
 ::res://game/assets/audio/::1753665896
 ::res://game/assets/audio/ambient/::1753593931
 ::res://game/assets/audio/music/::1753593931
 ::res://game/assets/audio/sfx/::1753593931
 ::res://game/assets/fonts/::1753594064
-main_font.tres::::-1::1753594064::0::1::::<><>::
-ui_font.tres::::-1::1753594064::0::1::::<><>::
+main_font.tres::::-1::1753593931::0::1::::<><>::
+ui_font.tres::::-1::1753593931::0::1::::<><>::
 ::res://game/assets/visuals/::1753665896
-::res://game/assets/visuals/backgrounds/::1753665896
+::res://game/assets/visuals/backgrounds/::1753665914
 Dashboard.png::CompressedTexture2D::2296805372268485766::1753599700::1753665914::1::::<><>::
 ::res://game/assets/visuals/historical_photos/::1753593931
 ::res://game/assets/visuals/icons/::1753593931
 ::res://game/assets/visuals/portraits/::1753593931
 ::res://game/src/::1753594064
-::res://game/src/core/::1753664487
-SceneManager.gd::GDScript::-1::1753664487::0::1::::<>Node<>::
+::res://game/src/core/::1753666489
 ::res://game/src/core/bootstrap/::1753597181
 BootState.gd::GDScript::-1::1753597180::0::1::::BootState<>State<>::
 DependencyInjector.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
@@ -57,8 +86,8 @@ reforms.json::JSON::-1::1753598846::0::1::::<><>::
 ::res://game/src/data/localization/::1753594064
 text_en.json::JSON::-1::1753594064::0::1::::<><>::
 text_es.json::JSON::-1::1753594064::0::1::::<><>::
-::res://game/src/game/::1753665054
-GameStateMachine.gd::GDScript::-1::1753665054::0::1::::GameStateMachine<>StateMachine<>::
+::res://game/src/game/::1753667398
+GameStateMachine.gd::GDScript::-1::1753667398::0::1::::<>Node<>::
 ::res://game/src/game/ai/::1753594064
 AIDirector.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 DecisionTree.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
@@ -105,12 +134,12 @@ CrisisPopup.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 PopupBase.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 ReformPopup.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 RegionPopup.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
-::res://game/src/ui/screens/::1753665780
-DifficultyScreen.gd::GDScript::-1::1753665191::0::1::::DifficultySelectState<>State<>::
+::res://game/src/ui/screens/::1753676038
+DifficultyScreen.gd::GDScript::-1::1753669288::0::1::::<>Control<>::
+DifficultyScreen.tscn::PackedScene::4345045655311329588::1753676038::0::1::::<><>::res://game/src/ui/screens/DifficultyScreen.gd<>uid://crtx84c6ti3bk::::res://game/reff.png<>uid://bdhay6ascof1e::::res://game/ref.png<>uid://b63ptg7cxo4hq::::res://game/Com.png<>uid://dujhiak4kaoex::::res://game/his.png<>uid://cqfk8fray5o3n::::res://game/revv.png<>uid://cxb6k1dnrqqw1::::res://game/Voltar.svg
 EndGameScreen.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
-GameScreen.gd::GDScript::-1::1753598846::0::1::::GamePlayingState<>State<>::
-MainMenuScreen.gd::GDScript::-1::1753665779::0::1::::MainMenuState<>State<>::
-DifficultyScreen.tscn::PackedScene::4345045655311329588::1753665780::0::1::::<><>::res://game/src/ui/screens/DifficultyScreen.gd
+GameScreen.gd::GDScript::-1::1753676038::0::1::::<>Control<>::
+MainMenuScreen.gd::GDScript::-1::1753667530::0::1::::<>Control<>::
 ::res://game/src/ui/theme/::1753594064
 ChileanTheme.tres::::-1::1753594064::0::1::::<><>::
 UIConstants.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::

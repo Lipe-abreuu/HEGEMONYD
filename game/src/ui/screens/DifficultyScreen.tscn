@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b251jc2bh7s2g"]
+[gd_scene load_steps=8 format=3 uid="uid://b251jc2bh7s2g"]
 
 [ext_resource type="Script" path="res://game/src/ui/screens/DifficultyScreen.gd" id="1_pf8su"]
+[ext_resource type="Texture2D" uid="uid://crtx84c6ti3bk" path="res://game/reff.png" id="2_jcg85"]
+[ext_resource type="Texture2D" uid="uid://bdhay6ascof1e" path="res://game/ref.png" id="3_4nldn"]
+[ext_resource type="Texture2D" uid="uid://b63ptg7cxo4hq" path="res://game/Com.png" id="4_1ifj8"]
+[ext_resource type="Texture2D" uid="uid://dujhiak4kaoex" path="res://game/his.png" id="5_13ycq"]
+[ext_resource type="Texture2D" uid="uid://cqfk8fray5o3n" path="res://game/revv.png" id="6_2vy0y"]
+[ext_resource type="Texture2D" uid="uid://cxb6k1dnrqqw1" path="res://game/Voltar.svg" id="7_87o25"]
 
-[node name="Control" type="Control"]
+[node name="DifficultyScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,3 +16,130 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pf8su")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -11.0
+offset_right = 1935.0
+offset_bottom = 1078.0
+texture = ExtResource("2_jcg85")
+expand_mode = 1
+
+[node name="Reformista Mode" type="TextureRect" parent="TextureRect"]
+offset_left = 217.0
+offset_top = 511.0
+offset_right = 705.0
+offset_bottom = 1095.0
+texture = ExtResource("3_4nldn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ReformistaContainer" type="VBoxContainer" parent="TextureRect/Reformista Mode"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.5
+offset_top = -301.0
+offset_right = 259.5
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="ReformistaButton" type="Button" parent="TextureRect/Reformista Mode/ReformistaContainer"]
+layout_mode = 2
+icon = ExtResource("4_1ifj8")
+flat = true
+icon_alignment = 1
+
+[node name="Historico Mode" type="TextureRect" parent="TextureRect/Reformista Mode"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 306.0
+offset_top = -584.0
+offset_right = 794.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_13ycq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HistoricoContainer" type="VBoxContainer" parent="TextureRect/Reformista Mode/Historico Mode"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.5
+offset_top = -301.0
+offset_right = 259.5
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="HistoricoButton" type="Button" parent="TextureRect/Reformista Mode/Historico Mode/HistoricoContainer"]
+layout_mode = 2
+icon = ExtResource("4_1ifj8")
+flat = true
+icon_alignment = 1
+
+[node name="Revolucionario Mode" type="TextureRect" parent="TextureRect/Reformista Mode/Historico Mode"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 306.0
+offset_top = -584.0
+offset_right = 794.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_2vy0y")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RevolucionarioContainer" type="VBoxContainer" parent="TextureRect/Reformista Mode/Historico Mode/Revolucionario Mode"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.5
+offset_top = -299.0
+offset_right = 259.5
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="RevolucionarioButton" type="Button" parent="TextureRect/Reformista Mode/Historico Mode/Revolucionario Mode/RevolucionarioContainer"]
+layout_mode = 2
+icon = ExtResource("4_1ifj8")
+flat = true
+icon_alignment = 1
+
+[node name="Voltar" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 888.0
+offset_right = 160.0
+offset_bottom = 981.0
+icon = ExtResource("7_87o25")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="TextureRect/Reformista Mode/ReformistaContainer/ReformistaButton" to="." method="_on_reformista_button_pressed"]
+[connection signal="pressed" from="TextureRect/Reformista Mode/Historico Mode/HistoricoContainer/HistoricoButton" to="." method="_on_historico_button_pressed"]
+[connection signal="pressed" from="TextureRect/Reformista Mode/Historico Mode/Revolucionario Mode/RevolucionarioContainer/RevolucionarioButton" to="." method="_on_revolucionario_button_pressed"]

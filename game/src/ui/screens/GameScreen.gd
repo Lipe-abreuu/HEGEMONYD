@@ -1,44 +1,43 @@
-# GameScreen.gd - Controla a lógica e a UI da tela principal do jogo.
-extends State
-class_name GamePlayingState
+# GameScreen.gd - O controlador da tela principal do jogo.
+extends Control
 
-# Referências para os nós principais da sua cena de jogo (.tscn)
-# @onready var map_container = $MapContainer
-# @onready var ministry_grid = $SidePanel/MinistryGrid
-# @onready var notification_panel = $SidePanel/NotificationPanel
+# --- Variáveis para ligar aos nós da UI ---
+# Certifique-se de que os nós com estes nomes existem na sua cena GameScreen.tscn
+# e que os caminhos aqui estão corretos.
+@onready var date_label: Label = $TopBar/DateLabel
+@onready var capital_politico_label: Label = $MinistriesContainer/MinistryCard1/HBoxContainer/ValueLabel # Exemplo de caminho
 
-func enter() -> void:
-	print("Estado de Jogo Principal: Entrando.")
-	
-	# Esta é a lógica principal para iniciar o jogo:
-	# 1. Carregar e exibir a sua cena principal (.tscn).
-	# 2. Conectar os sinais da UI (cliques no mapa, nos ministérios) a funções aqui.
-	# 3. Iniciar o sistema de tempo (TimeSystem) para que os dias comecem a passar.
-	# 4. Enviar o evento de que o jogo começou para que outros sistemas reajam.
-	EventBus.emit_event(EventBus.EventType.GAME_STARTED, {}, "GamePlayingState")
-	
-	print("Jogo iniciado. A tela principal seria exibida agora.")
+# A função _ready é chamada uma vez quando a cena está pronta.
+func _ready() -> void:
+	print("A tela principal do jogo (GameScreen) está pronta.")
+	# Começamos a contar o tempo assim que a tela do jogo aparece.
+	if Engine.has_singleton("TimeSystem"):
+		TimeSystem.start_time()
 
-func exit() -> void:
-	print("Estado de Jogo Principal: Saindo (ex: para menu de pausa ou fim de jogo).")
-	# Pausar o sistema de tempo e esconder a UI principal.
-	pass
+# A função _process é chamada a cada frame, ideal para atualizar a UI.
+func _process(delta: float) -> void:
+	# --- ATUALIZAR A DATA ---
+	# A cada frame, pedimos a data ao TimeSystem e atualizamos o texto do Label.
+	if Engine.has_singleton("TimeSystem"):
+		var current_date = TimeSystem.current_date
+		if current_date:
+			# Formato de exemplo, ajuste como preferir.
+			date_label.text = "%s %d, %d" % [get_month_name(current_date.month), current_date.day, current_date.year]
 
-# Chamado a cada frame. Usado para atualizar a UI em tempo real.
-func process_update(delta: float) -> void:
-	# Exemplo:
-	# - Atualizar o display de data/hora.
-	# - Atualizar a barra de progresso da "Revolução".
-	pass
+	# --- ATUALIZAR O CAPITAL POLÍTICO ---
+	if Engine.has_singleton("PoliticalSystem"):
+		var capital = PoliticalSystem.political_capital
+		# Assumindo que o seu primeiro card de ministério mostra o capital político.
+		capital_politico_label.text = str(capital)
 
-# --- Funções de Exemplo para a UI ---
+# Função auxiliar para obter o nome do mês
+func get_month_name(month_number: int) -> String:
+	var month_names = ["", "JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"]
+	if month_number >= 1 and month_number <= 12:
+		return month_names[month_number]
+	return "ERR"
 
-func _on_region_clicked(region_name: String) -> void:
-	print("Região '" + region_name + "' foi clicada.")
-	# Emite um evento para que o sistema de UI saiba que precisa abrir um popup de região.
-	EventBus.emit_event(EventBus.EventType.REGION_CLICKED, {"region_name": region_name}, "GamePlayingState")
+# --- Funções para os Botões dos Ministérios ---
 
-func _on_ministry_clicked(ministry_name: String) -> void:
-	print("Ministério '" + ministry_name + "' foi clicado.")
-	# Emite um evento para abrir o popup daquele ministério.
-	EventBus.emit_event(EventBus.EventType.MINISTRY_CLICKED, {"ministry_name": ministry_name}, "GamePlayingState")
+# func _on_planejamento_button_pressed():
+#	print("CLICOU no Ministério do Planejamento!")

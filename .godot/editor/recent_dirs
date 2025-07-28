@@ -1,5 +1,6 @@
+res://game
+res://game/src/game
 res://game/src/ui/screens
 res://game/src/core
 res://
-res://game
 res://game/src/core/events

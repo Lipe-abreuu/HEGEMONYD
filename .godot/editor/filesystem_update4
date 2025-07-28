@@ -7,3 +7,4 @@ res://main.tscn
 res://game/src/core/SceneManager.gd
 res://game/src/game/states/GameLoadingState.gd.gd
 res://game/src/ui/screens/DifficultyScreen.tscn
+res://game/src/ui/screens/GameScreen.gd
