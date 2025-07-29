@@ -1,43 +1,106 @@
-# GameScreen.gd - O controlador da tela principal do jogo.
-extends Control
+extends Node2D
 
-# --- Variáveis para ligar aos nós da UI ---
-# Certifique-se de que os nós com estes nomes existem na sua cena GameScreen.tscn
-# e que os caminhos aqui estão corretos.
-@onready var date_label: Label = $TopBar/DateLabel
-@onready var capital_politico_label: Label = $MinistriesContainer/MinistryCard1/HBoxContainer/ValueLabel # Exemplo de caminho
+# === REFERÊNCIAS DE UI ===
 
-# A função _ready é chamada uma vez quando a cena está pronta.
-func _ready() -> void:
-	print("A tela principal do jogo (GameScreen) está pronta.")
-	# Começamos a contar o tempo assim que a tela do jogo aparece.
-	if Engine.has_singleton("TimeSystem"):
-		TimeSystem.start_time()
+@onready var date_label = $"HighPanel Tex/date_label"
+@onready var revolution_bar = $"LeftPanel Tex/LeftPanel/RevolutionBar"
+@onready var notification_label = $"NotificationTex/NotificationContainer/RichTextLabel"
 
-# A função _process é chamada a cada frame, ideal para atualizar a UI.
-func _process(delta: float) -> void:
-	# --- ATUALIZAR A DATA ---
-	# A cada frame, pedimos a data ao TimeSystem e atualizamos o texto do Label.
-	if Engine.has_singleton("TimeSystem"):
-		var current_date = TimeSystem.current_date
-		if current_date:
-			# Formato de exemplo, ajuste como preferir.
-			date_label.text = "%s %d, %d" % [get_month_name(current_date.month), current_date.day, current_date.year]
+@onready var play_button = $"HighPanel Tex/Play Botton"
+@onready var pause_button = $"HighPanel Tex/Pause Botton"
+@onready var menu_button = $"HighPanel Tex/Menu Botton"
 
-	# --- ATUALIZAR O CAPITAL POLÍTICO ---
-	if Engine.has_singleton("PoliticalSystem"):
-		var capital = PoliticalSystem.political_capital
-		# Assumindo que o seu primeiro card de ministério mostra o capital político.
-		capital_politico_label.text = str(capital)
+# Botões dos ministérios (baseado na sua estrutura real: Min1Container etc)
+@onready var min_consult_buttons = [
+	$Min1Container/ConsultarMin1,
+	$Min2Container/ConsultarMin2,
+	$Min3Container/ConsultarMin3,
+	$Min4Container/ConsultarMin4
+]
 
-# Função auxiliar para obter o nome do mês
-func get_month_name(month_number: int) -> String:
-	var month_names = ["", "JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"]
-	if month_number >= 1 and month_number <= 12:
-		return month_names[month_number]
-	return "ERR"
+# Regiões do mapa (Polygon2D com colisão e input_event)
+@onready var regions = {
+	"Norte": $North,
+	"Centro": $Midle,  # Nome real do node
+	"Sul": $South
+}
 
-# --- Funções para os Botões dos Ministérios ---
+# === ESTADO DE JOGO ===
+var current_month := 0
+var current_year := 1970
+var is_paused := true
 
-# func _on_planejamento_button_pressed():
-#	print("CLICOU no Ministério do Planejamento!")
+var months := [
+	"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+	"Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+]
+
+# === INICIALIZAÇÃO ===
+func _ready():
+	_update_date()
+
+	# Conecta botões principais
+	play_button.pressed.connect(_on_play)
+	pause_button.pressed.connect(_on_pause)
+	menu_button.pressed.connect(_on_menu)
+
+	# Conecta botões dos ministérios
+	for i in range(min_consult_buttons.size()):
+		var button = min_consult_buttons[i]
+		if button:
+			button.pressed.connect(_on_ministry_clicked.bind(i + 1))
+		else:
+			push_warning("❗ Botão do ministério " + str(i + 1) + " não encontrado.")
+
+	# Conecta input nas regiões (Polygon2D via input_event)
+	for region_name in regions.keys():
+		var region_node = regions[region_name]
+		if region_node:
+			region_node.connect("input_event", Callable(self, "_on_region_input").bind(region_name))
+
+# === AÇÕES DOS BOTÕES ===
+func _on_play():
+	is_paused = false
+	advance_month()
+
+func _on_pause():
+	is_paused = true
+	show_notification("⏸️ Tempo pausado.")
+
+func _on_menu():
+	show_notification("📋 Menu ainda não implementado.")
+
+func _on_ministry_clicked(index: int):
+	show_notification("📊 Ministério " + str(index) + " consultado.")
+
+# === EVENTO DE CLIQUE NAS REGIÕES (input_event em Polygon2D) ===
+func _on_region_input(viewport, event, shape_idx, region_name):
+	if event is InputEventMouseButton and event.pressed:
+		_on_region_hover(region_name)
+
+func _on_region_hover(region_name: String):
+	show_notification("🗺️ Região: " + region_name)
+
+# === CONTROLE DE TEMPO ===
+func advance_month():
+	if is_paused:
+		return
+
+	current_month += 1
+	if current_month >= 12:
+		current_month = 0
+		current_year += 1
+
+	_update_date()
+	_update_revolution()
+
+func _update_date():
+	date_label.text = months[current_month] + " de " + str(current_year)
+
+func _update_revolution():
+	var pct: float = clamp((current_year - 1970) * 3 + current_month * 0.25, 0.0, 100.0)
+	revolution_bar.value = pct
+
+# === NOTIFICAÇÃO ===
+func show_notification(msg: String):
+	notification_label.text = msg

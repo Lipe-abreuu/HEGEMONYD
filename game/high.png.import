@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmqtexu0uk4m"
-path="res://.godot/imported/HighPannel.svg-5f793c4138ff2dbbc0f271e6a7ff88ef.ctex"
+uid="uid://csptbebeqabn1"
+path="res://.godot/imported/high.png-ae57b88b1f50f83135b2cdd86ae17a99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/HighPannel.svg"
-dest_files=["res://.godot/imported/HighPannel.svg-5f793c4138ff2dbbc0f271e6a7ff88ef.ctex"]
+source_file="res://game/high.png"
+dest_files=["res://.godot/imported/high.png-ae57b88b1f50f83135b2cdd86ae17a99.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

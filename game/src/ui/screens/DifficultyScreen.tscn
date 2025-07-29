@@ -27,6 +27,7 @@ texture = ExtResource("2_jcg85")
 expand_mode = 1
 
 [node name="Reformista Mode" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
 offset_left = 217.0
 offset_top = 511.0
 offset_right = 705.0
@@ -132,6 +133,7 @@ flat = true
 icon_alignment = 1
 
 [node name="Voltar" type="Button" parent="."]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 888.0
 offset_right = 160.0
