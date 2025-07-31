@@ -1,6 +1,6 @@
 extends Node2D
 
-# === REFERÊNCIAS DE UI ===
+# === REFERÊNCIAS UI (ajuste apenas se nomes mudarem na cena) ===
 
 @onready var date_label = $"HighPanel Tex/date_label"
 @onready var revolution_bar = $"LeftPanel Tex/LeftPanel/RevolutionBar"
@@ -10,25 +10,30 @@ extends Node2D
 @onready var pause_button = $"HighPanel Tex/Pause Botton"
 @onready var menu_button = $"HighPanel Tex/Menu Botton"
 
-# Botões dos ministérios (baseado na sua estrutura real: Min1Container etc)
+# Corrigido: paths reais dos botões dos ministérios
 @onready var min_consult_buttons = [
-	$Min1Container/ConsultarMin1,
-	$Min2Container/ConsultarMin2,
-	$Min3Container/ConsultarMin3,
-	$Min4Container/ConsultarMin4
+	$"Min 1/Min1Container/ConsultarMin1",
+	$"Min 2/Min2Container/ConsultarMin2",
+	$"Min 3/Min3Container/ConsultarMin3",
+	$"Min 4/Min4Container/ConsultarMin4"
 ]
 
-# Regiões do mapa (Polygon2D com colisão e input_event)
 @onready var regions = {
 	"Norte": $North,
-	"Centro": $Midle,  # Nome real do node
+	"Centro": $Midle,
 	"Sul": $South
 }
 
-# === ESTADO DE JOGO ===
+# Só existe lbl_dinheiro, demais HUDs são ignorados por ora
+@onready var lbl_dinheiro = $"Min 1/Min1Container/lbl_dinheiro"
+# Se criar mais labels na UI, só adicionar aqui e ajustar update_hud()
+
+# === VARIÁVEIS DO JOGO ===
 var current_month := 0
 var current_year := 1970
 var is_paused := true
+
+var dinheiro := 300000
 
 var months := [
 	"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
@@ -38,13 +43,14 @@ var months := [
 # === INICIALIZAÇÃO ===
 func _ready():
 	_update_date()
+	_update_hud()
 
-	# Conecta botões principais
+	# Botões principais
 	play_button.pressed.connect(_on_play)
 	pause_button.pressed.connect(_on_pause)
 	menu_button.pressed.connect(_on_menu)
 
-	# Conecta botões dos ministérios
+	# Botões dos ministérios
 	for i in range(min_consult_buttons.size()):
 		var button = min_consult_buttons[i]
 		if button:
@@ -52,13 +58,13 @@ func _ready():
 		else:
 			push_warning("❗ Botão do ministério " + str(i + 1) + " não encontrado.")
 
-	# Conecta input nas regiões (Polygon2D via input_event)
+	# Regiões do mapa (Polygon2D via input_event)
 	for region_name in regions.keys():
 		var region_node = regions[region_name]
 		if region_node:
 			region_node.connect("input_event", Callable(self, "_on_region_input").bind(region_name))
 
-# === AÇÕES DOS BOTÕES ===
+# --- BOTÕES PRINCIPAIS ---
 func _on_play():
 	is_paused = false
 	advance_month()
@@ -70,10 +76,11 @@ func _on_pause():
 func _on_menu():
 	show_notification("📋 Menu ainda não implementado.")
 
+# --- BOTÕES DOS MINISTÉRIOS ---
 func _on_ministry_clicked(index: int):
 	show_notification("📊 Ministério " + str(index) + " consultado.")
 
-# === EVENTO DE CLIQUE NAS REGIÕES (input_event em Polygon2D) ===
+# --- CLIQUE NAS REGIÕES DO MAPA ---
 func _on_region_input(viewport, event, shape_idx, region_name):
 	if event is InputEventMouseButton and event.pressed:
 		_on_region_hover(region_name)
@@ -81,7 +88,7 @@ func _on_region_input(viewport, event, shape_idx, region_name):
 func _on_region_hover(region_name: String):
 	show_notification("🗺️ Região: " + region_name)
 
-# === CONTROLE DE TEMPO ===
+# --- AVANÇO DE MÊS, DATA E HUD ---
 func advance_month():
 	if is_paused:
 		return
@@ -91,16 +98,23 @@ func advance_month():
 		current_month = 0
 		current_year += 1
 
+	# Atualiza só dinheiro como exemplo de HUD real
+	dinheiro -= randi_range(1000, 5000)
+
 	_update_date()
+	_update_hud()
 	_update_revolution()
 
 func _update_date():
 	date_label.text = months[current_month] + " de " + str(current_year)
 
+func _update_hud():
+	lbl_dinheiro.text = "Dinheiro: $%d" % dinheiro
+
 func _update_revolution():
 	var pct: float = clamp((current_year - 1970) * 3 + current_month * 0.25, 0.0, 100.0)
 	revolution_bar.value = pct
 
-# === NOTIFICAÇÃO ===
+# --- NOTIFICAÇÃO ---
 func show_notification(msg: String):
 	notification_label.text = msg

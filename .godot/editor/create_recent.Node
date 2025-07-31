@@ -1,7 +1,8 @@
 CollisionPolygon2D
+Area2D
+Label
 Polygon2D
 TextureButton
-Label
 VBoxContainer
 TextureRect
 RichTextLabel
@@ -11,4 +12,3 @@ Panel
 CanvasLayer
 Control
 HSeparator
-Button

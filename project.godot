@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 EventBus="*res://game/src/core/events/EventBus.gd"
 GameStateMachine="*res://game/src/game/GameStateMachine.gd"
+PoliticalSystem="*res://game/src/game/systems/political/PoliticalSystem.gd"
+EconomicSystem="*res://game/src/game/systems/economic/EconomicSystem.gd"
+ThreatSystem="*res://game/src/game/systems/threat/ThreatSystem.gd"
 
 [display]
 

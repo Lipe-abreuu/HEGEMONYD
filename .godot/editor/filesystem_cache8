@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1753758583
+::res://::1753922937
 icon.svg::CompressedTexture2D::8445247314857833410::1753591801::1753591810::1::::<><>::
-main.tscn::PackedScene::8641554212911388907::1753682584::0::1::::<><>::res://game/src/game/GameStateMachine.gd
-Mainmenu.tscn::PackedScene::3659496098611872335::1753682584::0::1::::<><>::res://game/src/ui/screens/MainMenuScreen.gd<>uid://cv1l65jefcldp::::res://game/Dashboard.png<>uid://dsadnbd8mupok::::res://game/Subtitle.png<>uid://bvc1j4mym5jow::::res://game/New.png<>uid://bvso7psl35r41::::res://game/Carreg.png<>uid://caxi4h7x7n1nd::::res://game/opc.png<>uid://dhujttjh5125u::::res://game/sair.png
+main.tscn::PackedScene::8641554212911388907::1753763293::0::1::::<><>::res://game/src/game/GameStateMachine.gd
+Mainmenu.tscn::PackedScene::3659496098611872335::1753763293::0::1::::<><>::res://game/src/ui/screens/MainMenuScreen.gd<>uid://cv1l65jefcldp::::res://game/Dashboard.png<>uid://dsadnbd8mupok::::res://game/Subtitle.png<>uid://bvc1j4mym5jow::::res://game/New.png<>uid://bvso7psl35r41::::res://game/Carreg.png<>uid://caxi4h7x7n1nd::::res://game/opc.png<>uid://dhujttjh5125u::::res://game/sair.png
 node_2d.tscn::PackedScene::7827834235332081735::1753597180::0::1::::<><>::
-::res://game/::1753680733
+::res://game/::1753882924
 allend.png::CompressedTexture2D::3047487629470999150::1753671676::1753671684::1::::<><>::
 Allend.svg::CompressedTexture2D::4474121582067613193::1753671650::1753671617::1::::<><>::
 Carreg.png::CompressedTexture2D::3898453199163682760::1753601582::1753601614::1::::<><>::
@@ -12,12 +12,9 @@ Com.png::CompressedTexture2D::4621022463257501458::1753668428::1753668429::1::::
 Comp.svg::CompressedTexture2D::8441132514889225005::1753672458::1753672471::1::::<><>::
 Component 3.png::CompressedTexture2D::4395579977680924081::1753674288::1753674301::1::::<><>::
 Consultar Botton.svg::CompressedTexture2D::42345798792427210::1753672379::1753672471::1::::<><>::
-Dashboard.png::CompressedTexture2D::6301205741714178113::1753640109::1753640116::1::::<><>::
-Dashboardbaba.png::CompressedTexture2D::1369496649941955952::1753639996::1753640003::1::::<><>::
 Date Botton.svg::CompressedTexture2D::5766987704080459318::1753671347::1753671367::1::::<><>::
 high.png::CompressedTexture2D::6068361839679479064::1753680731::1753680733::1::::<><>::
 his.png::CompressedTexture2D::8582057645706144407::1753668345::1753668359::1::::<><>::
-mapa.png::CompressedTexture2D::5570836328548510323::1753675486::1753675497::1::::<><>::
 Menu Botton.svg::CompressedTexture2D::3890728237956661846::1753671340::1753671367::1::::<><>::
 Midle.svg::CompressedTexture2D::3272787691891861811::1753674827::1753674843::1::::<><>::
 Min2.svg::CompressedTexture2D::5946936656356139959::1753673399::1753673298::1::::<><>::
@@ -34,7 +31,6 @@ Pause Btton.svg::CompressedTexture2D::1853937130655907409::1753671354::175367136
 plan icon.svg::CompressedTexture2D::15017894350246558::1753672087::1753672089::1::::<><>::
 Play Botton.svg::CompressedTexture2D::1305955499607709100::1753671359::1753671367::1::::<><>::
 ref.png::CompressedTexture2D::2611482346984255836::1753668023::1753668027::1::::<><>::
-reff.png::CompressedTexture2D::6006731836293377004::1753668070::1753668080::1::::<><>::
 Reformista.svg::CompressedTexture2D::1390567819374579784::1753667866::1753667868::1::::<><>::
 Rev Con.svg::CompressedTexture2D::3790979246006028152::1753670459::1753670461::1::::<><>::
 revv.png::CompressedTexture2D::5906851144403239469::1753668357::1753668359::1::::<><>::
@@ -85,8 +81,8 @@ reforms.json::JSON::-1::1753598846::0::1::::<><>::
 ::res://game/src/data/localization/::1753594064
 text_en.json::JSON::-1::1753594064::0::1::::<><>::
 text_es.json::JSON::-1::1753594064::0::1::::<><>::
-::res://game/src/game/::1753680071
-GameStateMachine.gd::GDScript::-1::1753680071::0::1::::<>Node<>::
+::res://game/src/game/::1753762158
+GameStateMachine.gd::GDScript::-1::1753762158::0::1::::<>Node<>::
 ::res://game/src/game/ai/::1753594064
 AIDirector.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 DecisionTree.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
@@ -107,11 +103,11 @@ EconomicSystem.gd::GDScript::-1::1753598846::0::1::::<>Node<>::
 Production.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 Trade.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 Treasury.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
-::res://game/src/game/systems/political/::1753598846
+::res://game/src/game/systems/political/::1753762408
 Coalition.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 Faction.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 PoliticalEvent.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
-PoliticalSystem.gd::GDScript::-1::1753598846::0::1::::<>Node<>::
+PoliticalSystem.gd::GDScript::-1::1753762408::0::1::::<>Node<>::
 ReformSystem.gd::GDScript::-1::1753598846::0::1::::<>Node<>::
 ::res://game/src/game/systems/threat/::1753598846
 CIAAgent.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
@@ -133,13 +129,13 @@ CrisisPopup.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 PopupBase.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 ReformPopup.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
 RegionPopup.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
-::res://game/src/ui/screens/::1753682584
+::res://game/src/ui/screens/::1753763293
 DifficultyScreen.gd::GDScript::-1::1753669288::0::1::::<>Control<>::
-DifficultyScreen.tscn::PackedScene::4345045655311329588::1753682584::0::1::::<><>::res://game/src/ui/screens/DifficultyScreen.gd<>uid://crtx84c6ti3bk::::res://game/reff.png<>uid://bdhay6ascof1e::::res://game/ref.png<>uid://b63ptg7cxo4hq::::res://game/Com.png<>uid://dujhiak4kaoex::::res://game/his.png<>uid://cqfk8fray5o3n::::res://game/revv.png<>uid://cxb6k1dnrqqw1::::res://game/Voltar.svg
+DifficultyScreen.tscn::PackedScene::4345045655311329588::1753763293::0::1::::<><>::res://game/src/ui/screens/DifficultyScreen.gd<>uid://crtx84c6ti3bk::::res://game/reff.png<>uid://bdhay6ascof1e::::res://game/ref.png<>uid://b63ptg7cxo4hq::::res://game/Com.png<>uid://dujhiak4kaoex::::res://game/his.png<>uid://cqfk8fray5o3n::::res://game/revv.png<>uid://cxb6k1dnrqqw1::::res://game/Voltar.svg
 EndGameScreen.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::
-GameScreen.gd::GDScript::-1::1753682481::0::1::::<>Node2D<>::
-GameScreen.tscn::PackedScene::148549088955420587::1753682584::0::1::::<><>::res://game/src/ui/screens/GameScreen.gd<>uid://clms4iwawhulv::::res://game/mapa.png<>uid://bvoxyw3omivfy::::res://game/Menu Botton.svg<>uid://csptbebeqabn1::::res://game/high.png<>uid://1occrf37ylt6::::res://game/Pause Btton.svg<>uid://suu5qdh7p8ps::::res://game/Play Botton.svg<>uid://buam4yx8tep1y::::res://game/Rev Con.svg<>uid://bjohw8qbw6pyk::::res://game/allend.png<>uid://bsy0vvl3w53xv::::res://game/Notification.svg<>uid://bbsib5x4ucroc::::res://game/min continare.png<>uid://uroucdt6fug::::res://game/Consultar Botton.svg<>uid://cqy0gbvctwv5h::::res://game/Min2.svg<>uid://bnam1nuobfsxk::::res://game/min3.svg<>uid://b3synsb3sa8kf::::res://game/Min4.svg<>uid://bt38stgotw4vu::::res://game/North.svg<>uid://drocuyf56v57c::::res://game/Sul.svg
-MainMenuScreen.gd::GDScript::-1::1753680380::0::1::::<>Control<>::
+GameScreen.gd::GDScript::-1::1753762804::0::1::::<>Node2D<>::
+GameScreen.tscn::PackedScene::148549088955420587::1753763293::0::1::::<><>::res://game/src/ui/screens/GameScreen.gd<>uid://clms4iwawhulv::::res://game/mapa.png<>uid://bvoxyw3omivfy::::res://game/Menu Botton.svg<>uid://csptbebeqabn1::::res://game/high.png<>uid://1occrf37ylt6::::res://game/Pause Btton.svg<>uid://suu5qdh7p8ps::::res://game/Play Botton.svg<>uid://buam4yx8tep1y::::res://game/Rev Con.svg<>uid://bjohw8qbw6pyk::::res://game/allend.png<>uid://bsy0vvl3w53xv::::res://game/Notification.svg<>uid://bbsib5x4ucroc::::res://game/min continare.png<>uid://uroucdt6fug::::res://game/Consultar Botton.svg<>uid://cqy0gbvctwv5h::::res://game/Min2.svg<>uid://bnam1nuobfsxk::::res://game/min3.svg<>uid://b3synsb3sa8kf::::res://game/Min4.svg<>uid://bt38stgotw4vu::::res://game/North.svg
+MainMenuScreen.gd::GDScript::-1::1753762238::0::1::::<>Control<>::
 ::res://game/src/ui/theme/::1753594064
 ChileanTheme.tres::::-1::1753594064::0::1::::<><>::
 UIConstants.gd::GDScript::-1::1753594064::0::1::::<>RefCounted<>::

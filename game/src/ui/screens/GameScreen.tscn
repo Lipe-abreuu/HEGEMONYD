@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cd7t1s0lhlhj"]
+[gd_scene load_steps=16 format=3 uid="uid://cd7t1s0lhlhj"]
 
 [ext_resource type="Script" path="res://game/src/ui/screens/GameScreen.gd" id="1_s3g4i"]
 [ext_resource type="Texture2D" uid="uid://clms4iwawhulv" path="res://game/mapa.png" id="2_8p2ye"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bnam1nuobfsxk" path="res://game/min3.svg" id="12_667hm"]
 [ext_resource type="Texture2D" uid="uid://b3synsb3sa8kf" path="res://game/Min4.svg" id="13_l3uxn"]
 [ext_resource type="Texture2D" uid="uid://bt38stgotw4vu" path="res://game/North.svg" id="14_7u68g"]
-[ext_resource type="Texture2D" uid="uid://drocuyf56v57c" path="res://game/Sul.svg" id="15_8mass"]
 
 [node name="GameScreen" type="Node2D"]
 script = ExtResource("1_s3g4i")
@@ -156,12 +155,11 @@ offset_bottom = 236.0
 layout_mode = 2
 horizontal_alignment = 2
 
-[node name="ConsultarMin1" type="Button" parent="Min 1/Min1Container/Min name 1"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 167.0
-offset_right = 214.0
-offset_bottom = 213.0
+[node name="lbl_dinheiro" type="Label" parent="Min 1/Min1Container"]
+layout_mode = 2
+
+[node name="ConsultarMin1" type="Button" parent="Min 1/Min1Container"]
+layout_mode = 2
 icon = ExtResource("10_dgvfy")
 flat = true
 icon_alignment = 1
@@ -187,12 +185,11 @@ ou 3 oq quer
 que seja "
 horizontal_alignment = 2
 
-[node name="ConsultarMin2" type="Button" parent="Min 2/Min2Container/Min name 2"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 167.0
-offset_right = 214.0
-offset_bottom = 213.0
+[node name="lbl_ameaca" type="Label" parent="Min 2/Min2Container"]
+layout_mode = 2
+
+[node name="ConsultarMin2" type="Button" parent="Min 2/Min2Container"]
+layout_mode = 2
 icon = ExtResource("10_dgvfy")
 flat = true
 icon_alignment = 1
@@ -206,24 +203,23 @@ texture = ExtResource("12_667hm")
 
 [node name="Min3Container" type="VBoxContainer" parent="Min 3"]
 layout_mode = 0
-offset_left = -1328.0
-offset_top = -629.0
-offset_right = -1113.0
-offset_bottom = -401.0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 224.0
+offset_bottom = 233.0
 
 [node name="Min name 3" type="Label" parent="Min 3/Min3Container"]
 layout_mode = 2
 horizontal_alignment = 2
 
-[node name="ConsultarMin3" type="Button" parent="Min 3"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 172.0
-offset_right = 214.0
-offset_bottom = 218.0
+[node name="ConsultarMin3" type="Button" parent="Min 3/Min3Container"]
+layout_mode = 2
 icon = ExtResource("10_dgvfy")
 flat = true
 icon_alignment = 1
+
+[node name="lbl_dinheiro" type="Label" parent="Min 3/Min3Container"]
+layout_mode = 2
 
 [node name="Min 4" type="TextureRect" parent="."]
 offset_left = 1664.0
@@ -243,12 +239,11 @@ offset_bottom = 232.0
 layout_mode = 2
 horizontal_alignment = 2
 
-[node name="ConsultarMin4" type="Button" parent="Min 4/Min4Container/Min name 4"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 167.0
-offset_right = 214.0
-offset_bottom = 213.0
+[node name="lbl_estabilidade" type="Label" parent="Min 4/Min4Container"]
+layout_mode = 2
+
+[node name="ConsultarMin4" type="Button" parent="Min 4/Min4Container"]
+layout_mode = 2
 icon = ExtResource("10_dgvfy")
 flat = true
 icon_alignment = 1
@@ -258,13 +253,23 @@ position = Vector2(1000, 411)
 texture = ExtResource("14_7u68g")
 polygon = PackedVector2Array(-32, 105, -4, 108, 6, -18, 16, -37, 27, -57, 29, -71, 27, -96, 43, -110, 44, -117, 32, -144, 15, -221, 6, -238, -2, -232, -11, -212, -2, -146, -8, -113, -13, -49, -21, -19)
 
-[node name="Midle" type="Polygon2D" parent="."]
+[node name="Midle" type="Area2D" parent="."]
 position = Vector2(954, 671)
-texture = ExtResource("14_7u68g")
-polygon = PackedVector2Array(6, -74, 11, -71, 20, -67, 25, -71, 25, -77, 30, -83, 32, -91, 26, -115, 30, -133, 40, -140, 40, -151, 11, -153, 6, -142, 1, -128, -7, -127, -5, -111, -3, -90, -4, -78)
 
-[node name="South" type="Polygon2D" parent="."]
-position = Vector2(923.064, 1064.34)
-scale = Vector2(1.7234, 3.03488)
-texture = ExtResource("15_8mass")
-polygon = PackedVector2Array(1.70367, -67.659, 11.5679, -67.3295, 12.7284, -73.59, 16.7901, -79.5211, 22.0123, -83.1456, 23.1728, -86.7701, 22.5926, -91.7126, 27.2346, -94.3486, 28.9753, -104.563, 33.037, -113.13, 27.8148, -124.004, 31.8765, -152.67, 15.0494, -153.329, 8.66663, -140.808, 12.1481, -130.594, 8.08643, -119.72, 0.543213, -113.13, 4.02466, -106.54, -1.19757, -98.9617, 5.76544, -85.7816)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Midle"]
+position = Vector2(-132, -229)
+polygon = PackedVector2Array(-8, 7, -31, 7, -56, 114, -5, 206, 48, 105, 24, 6)
+
+[node name="South" type="Area2D" parent="."]
+position = Vector2(1908, 1342)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="South"]
+position = Vector2(-1101, -644)
+polygon = PackedVector2Array(-8, 7, -31, 7, -56, 114, -5, 206, 48, 105, 24, 6)
+
+[node name="North2" type="Area2D" parent="."]
+position = Vector2(1908, 1342)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="North2"]
+position = Vector2(-1139, -1145)
+polygon = PackedVector2Array(-8, 7, -31, 7, -56, 114, -5, 206, 48, 105, 24, 6)

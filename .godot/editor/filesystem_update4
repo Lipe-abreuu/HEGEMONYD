@@ -1,5 +1,4 @@
 res://game/src/ui/screens/GameScreen.tscn
-res://game/src/ui/screens/MainMenuScreen.gd
 res://main.tscn
 res://Mainmenu.tscn
 res://game/src/ui/screens/DifficultyScreen.tscn
