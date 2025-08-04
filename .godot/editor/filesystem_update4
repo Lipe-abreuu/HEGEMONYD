@@ -1,4 +1,14 @@
 res://game/src/ui/screens/GameScreen.tscn
+res://game/src/core/persistence/GameData.gd
 res://main.tscn
 res://Mainmenu.tscn
 res://game/src/ui/screens/DifficultyScreen.tscn
+res://game/src/ui/popups/EconomicMinistryPopup.tscn
+res://game/src/ui/PopupLayer.tscn.tscn
+res://game/src/ui/test/TestGameData.gd
+res://game/src/ui/screens/GameScreen.gd
+res://game/src/ui/screens/MainMenuScreen.gd
+res://game/src/ui/screens/Mainmenu.tscn
+res://game/src/core/persistence/SaveManager.gd
+res://game/src/game/systems/time/Calendar.gd
+res://game/src/game/systems/time/TimeSystem.gd

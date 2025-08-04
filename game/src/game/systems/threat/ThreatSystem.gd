@@ -44,12 +44,11 @@ var threat_level: String = "ALTO"
 var active_threats: Array = []
 
 func _ready() -> void:
-	EventBus.subscribe(EventBus.EventType.DAY_PASSED, self, "_on_day_passed")
-	EventBus.subscribe(EventBus.EventType.REFORM_COMPLETED, self, "_on_reform_completed")
-	
+	EventBus.subscribe(EventTypes.Type.DAY_PASSED, self, "_on_day_passed")
+	EventBus.subscribe(EventTypes.Type.REFORM_COMPLETED, self, "_on_reform_completed")
+
 	_initialize_threats()
 	print("ThreatSystem inicializado.")
-
 
 # --- Funções do Sistema ---
 

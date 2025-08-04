@@ -34,9 +34,9 @@ var imports: Dictionary = {}
 var exports: Dictionary = {}
 
 func _ready() -> void:
-	# Conecta aos eventos do jogo
-	EventBus.subscribe(EventBus.EventType.DAY_PASSED, self, "_on_day_passed")
-	EventBus.subscribe(EventBus.EventType.REFORM_COMPLETED, self, "_on_reform_completed")
+	EventBus.subscribe(EventTypes.Type.DAY_PASSED, self, "_on_day_passed")
+	EventBus.subscribe(EventTypes.Type.REFORM_COMPLETED, self, "_on_reform_completed")
+
 	
 	_initialize_economy()
 	print("EconomicSystem inicializado.")
@@ -94,3 +94,9 @@ func _on_reform_completed(event: GameEvent):
 	# Lógica para reagir a reformas econômicas.
 	# Ex: Mudar a propriedade de um setor (ownership_change)
 	pass
+func get_revenue_by_sector() -> Dictionary:
+	var rev: Dictionary = {}
+	for region in regions.values():
+		for s in region.sectors.values():
+			rev[s.name] = rev.get(s.name, 0) + s.calculate_revenue()
+	return rev

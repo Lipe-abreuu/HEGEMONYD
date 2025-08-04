@@ -12,3 +12,8 @@ offset_bottom = 40.0
 script = ExtResource("1_b5u2k")
 
 [node name="UILayer" type="CanvasLayer" parent="GameStateMachine"]
+
+[node name="PopupLayer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

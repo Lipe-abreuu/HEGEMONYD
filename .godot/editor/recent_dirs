@@ -1,9 +1,13 @@
+res://game/src/game/systems/time
+res://game/src/core/persistence
+res://game
+res://game/src/ui
+res://game/src/ui/popups
+res://
 res://game/src/game/systems/threat
 res://game/src/game/systems/economic
 res://game/src/game/systems/political
-res://game
 res://game/src/game
 res://game/src/ui/screens
 res://game/src/core
-res://
 res://game/src/core/events

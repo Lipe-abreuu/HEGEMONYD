@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HEGEMONY"
-run/main_scene="res://Mainmenu.tscn"
+run/main_scene="res://game/src/ui/screens/Mainmenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,10 @@ GameStateMachine="*res://game/src/game/GameStateMachine.gd"
 PoliticalSystem="*res://game/src/game/systems/political/PoliticalSystem.gd"
 EconomicSystem="*res://game/src/game/systems/economic/EconomicSystem.gd"
 ThreatSystem="*res://game/src/game/systems/threat/ThreatSystem.gd"
+PopupManager="*res://game/src/ui/popups/PopupManager.gd"
+PopupLayer="*res://game/src/ui/PopupLayer.tscn.tscn"
+SaveManager="*res://game/src/core/persistence/SaveManager.gd"
+Calendar="*res://game/src/game/systems/time/Calendar.gd"
 
 [display]
 

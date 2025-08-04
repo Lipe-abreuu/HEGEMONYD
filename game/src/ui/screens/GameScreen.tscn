@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cd7t1s0lhlhj"]
+[gd_scene load_steps=13 format=3 uid="uid://cd7t1s0lhlhj"]
 
 [ext_resource type="Script" path="res://game/src/ui/screens/GameScreen.gd" id="1_s3g4i"]
 [ext_resource type="Texture2D" uid="uid://clms4iwawhulv" path="res://game/mapa.png" id="2_8p2ye"]
@@ -9,12 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://buam4yx8tep1y" path="res://game/Rev Con.svg" id="6_uaygh"]
 [ext_resource type="Texture2D" uid="uid://bjohw8qbw6pyk" path="res://game/allend.png" id="7_t7pin"]
 [ext_resource type="Texture2D" uid="uid://bsy0vvl3w53xv" path="res://game/Notification.svg" id="8_cop6j"]
-[ext_resource type="Texture2D" uid="uid://bbsib5x4ucroc" path="res://game/min continare.png" id="9_p2134"]
 [ext_resource type="Texture2D" uid="uid://uroucdt6fug" path="res://game/Consultar Botton.svg" id="10_dgvfy"]
-[ext_resource type="Texture2D" uid="uid://cqy0gbvctwv5h" path="res://game/Min2.svg" id="11_1hw03"]
-[ext_resource type="Texture2D" uid="uid://bnam1nuobfsxk" path="res://game/min3.svg" id="12_667hm"]
-[ext_resource type="Texture2D" uid="uid://b3synsb3sa8kf" path="res://game/Min4.svg" id="13_l3uxn"]
-[ext_resource type="Texture2D" uid="uid://bt38stgotw4vu" path="res://game/North.svg" id="14_7u68g"]
+[ext_resource type="Texture2D" uid="uid://dqeqwgq6m83wb" path="res://game/Component 4.png" id="10_ejafw"]
+[ext_resource type="Texture2D" uid="uid://57l1o361q3ux" path="res://game/Component 4.svg" id="12_qhxmo"]
 
 [node name="GameScreen" type="Node2D"]
 script = ExtResource("1_s3g4i")
@@ -138,18 +135,19 @@ offset_bottom = 376.0
 layout_mode = 2
 
 [node name="Min 1" type="TextureRect" parent="."]
-offset_left = 1447.0
-offset_top = 114.0
-offset_right = 1663.0
-offset_bottom = 341.0
-texture = ExtResource("9_p2134")
+offset_left = 1455.0
+offset_top = 117.0
+offset_right = 1692.0
+offset_bottom = 364.0
+texture = ExtResource("10_ejafw")
+expand_mode = 1
 
 [node name="Min1Container" type="VBoxContainer" parent="Min 1"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 8.0
-offset_right = 204.0
-offset_bottom = 236.0
+offset_left = 11.0
+offset_top = 87.0
+offset_right = 221.0
+offset_bottom = 222.0
 
 [node name="Min name 1" type="Label" parent="Min 1/Min1Container"]
 layout_mode = 2
@@ -160,6 +158,7 @@ layout_mode = 2
 
 [node name="ConsultarMin1" type="Button" parent="Min 1/Min1Container"]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
 icon = ExtResource("10_dgvfy")
 flat = true
 icon_alignment = 1
@@ -167,22 +166,21 @@ icon_alignment = 1
 [node name="Min 2" type="TextureRect" parent="."]
 offset_left = 1678.0
 offset_top = 115.0
-offset_right = 1904.0
-offset_bottom = 355.0
-texture = ExtResource("11_1hw03")
+offset_right = 1919.0
+offset_bottom = 362.0
+texture = ExtResource("10_ejafw")
+expand_mode = 1
 
 [node name="Min2Container" type="VBoxContainer" parent="Min 2"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 8.0
-offset_right = 202.0
-offset_bottom = 236.0
+offset_left = 20.0
+offset_top = 65.0
+offset_right = 215.0
+offset_bottom = 229.0
 
 [node name="Min name 2" type="Label" parent="Min 2/Min2Container"]
 layout_mode = 2
-text = "ministeiros 2 
-ou 3 oq quer 
-que seja "
+text = "Ministeiro "
 horizontal_alignment = 2
 
 [node name="lbl_ameaca" type="Label" parent="Min 2/Min2Container"]
@@ -197,20 +195,24 @@ icon_alignment = 1
 [node name="Min 3" type="TextureRect" parent="."]
 offset_left = 1445.0
 offset_top = 360.0
-offset_right = 1671.0
-offset_bottom = 600.0
-texture = ExtResource("12_667hm")
+offset_right = 1669.0
+offset_bottom = 597.0
+texture = ExtResource("12_qhxmo")
+expand_mode = 1
 
 [node name="Min3Container" type="VBoxContainer" parent="Min 3"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 5.0
-offset_right = 224.0
-offset_bottom = 233.0
+offset_left = 7.0
+offset_top = 58.0
+offset_right = 204.0
+offset_bottom = 216.0
 
 [node name="Min name 3" type="Label" parent="Min 3/Min3Container"]
 layout_mode = 2
 horizontal_alignment = 2
+
+[node name="lbl_estabilidade" type="Label" parent="Min 3/Min3Container"]
+layout_mode = 2
 
 [node name="ConsultarMin3" type="Button" parent="Min 3/Min3Container"]
 layout_mode = 2
@@ -218,29 +220,26 @@ icon = ExtResource("10_dgvfy")
 flat = true
 icon_alignment = 1
 
-[node name="lbl_dinheiro" type="Label" parent="Min 3/Min3Container"]
-layout_mode = 2
-
 [node name="Min 4" type="TextureRect" parent="."]
-offset_left = 1664.0
-offset_top = 345.0
-offset_right = 1903.0
+offset_left = 1666.0
+offset_top = 352.0
+offset_right = 1902.0
 offset_bottom = 601.0
-texture = ExtResource("13_l3uxn")
+texture = ExtResource("12_qhxmo")
 
 [node name="Min4Container" type="VBoxContainer" parent="Min 4"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 22.0
-offset_right = 234.0
+offset_left = 8.0
+offset_top = 59.0
+offset_right = 222.0
 offset_bottom = 232.0
+
+[node name="lbl_politica" type="Label" parent="Min 4/Min4Container"]
+layout_mode = 2
 
 [node name="Min name 4" type="Label" parent="Min 4/Min4Container"]
 layout_mode = 2
 horizontal_alignment = 2
-
-[node name="lbl_estabilidade" type="Label" parent="Min 4/Min4Container"]
-layout_mode = 2
 
 [node name="ConsultarMin4" type="Button" parent="Min 4/Min4Container"]
 layout_mode = 2
@@ -248,28 +247,71 @@ icon = ExtResource("10_dgvfy")
 flat = true
 icon_alignment = 1
 
-[node name="North" type="Polygon2D" parent="."]
-position = Vector2(1000, 411)
-texture = ExtResource("14_7u68g")
-polygon = PackedVector2Array(-32, 105, -4, 108, 6, -18, 16, -37, 27, -57, 29, -71, 27, -96, 43, -110, 44, -117, 32, -144, 15, -221, 6, -238, -2, -232, -11, -212, -2, -146, -8, -113, -13, -49, -21, -19)
-
 [node name="Midle" type="Area2D" parent="."]
 position = Vector2(954, 671)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Midle"]
-position = Vector2(-132, -229)
-polygon = PackedVector2Array(-8, 7, -31, 7, -56, 114, -5, 206, 48, 105, 24, 6)
+position = Vector2(7, -223)
+polygon = PackedVector2Array(-3, 65, -20, 96, -18, 145, 9, 150, 26, 119, 26, 70)
 
 [node name="South" type="Area2D" parent="."]
 position = Vector2(1908, 1342)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="South"]
-position = Vector2(-1101, -644)
-polygon = PackedVector2Array(-8, 7, -31, 7, -56, 114, -5, 206, 48, 105, 24, 6)
+position = Vector2(-969, -684)
+polygon = PackedVector2Array(31, -60, 1, -63, -10, -27, -26, 62, -26, 106, -20, 202, -3, 202, 17, 150, 30, 92, 38, 55)
 
-[node name="North2" type="Area2D" parent="."]
+[node name="North" type="Area2D" parent="."]
 position = Vector2(1908, 1342)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="North2"]
-position = Vector2(-1139, -1145)
-polygon = PackedVector2Array(-8, 7, -31, 7, -56, 114, -5, 206, 48, 105, 24, 6)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="North"]
+position = Vector2(-921, -1037)
+polygon = PackedVector2Array(22, -146, -15, -134, 2, -75, -2, 9, -18, 114, -29, 204, 1, 210, 10, 106, 54, -12)
+
+[node name="PopupLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TestGameData" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="SaveBG" type="TextureRect" parent="."]
+offset_left = 559.0
+offset_top = 24.0
+offset_right = 834.0
+offset_bottom = 232.0
+
+[node name="SaveContainer" type="VBoxContainer" parent="SaveBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.243
+anchor_bottom = 1.928
+offset_left = 36.0
+offset_top = -25.0
+offset_right = -88.825
+offset_bottom = -153.024
+
+[node name="Label" type="Label" parent="SaveBG/SaveContainer"]
+layout_mode = 2
+text = "Teste do Sistema GameData"
+
+[node name="SaveButton" type="TextureButton" parent="SaveBG/SaveContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_e6dmn")
+
+[node name="LoadButton" type="TextureButton" parent="SaveBG/SaveContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_e6dmn")
+
+[node name="StatusLabel" type="Label" parent="SaveBG/SaveContainer"]
+layout_mode = 2
+text = "Pronto pra testar"
+
+[node name="DataDisplay" type="RichTextLabel" parent="SaveBG/SaveContainer"]
+layout_mode = 2
+text = "ddd"
+
+[connection signal="pressed" from="Min 1/Min1Container/ConsultarMin1" to="." method="_on_consultar_min_1_pressed"]
